@@ -1,0 +1,9 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // All SkillSpring reads/writes pass through the token-verified server API.
+    // This matches the existing shared project's deny-all policy. Do not replace
+    // another application's rules without reviewing its access requirements.
+    match /{document=**} { allow read, write: if false; }
+  }
+}

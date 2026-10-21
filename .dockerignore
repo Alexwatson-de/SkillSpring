@@ -1,0 +1,12 @@
+.env*
+.secrets/
+.git/
+node_modules/
+.next/
+.next-demo/
+.vercel/
+artifacts/
+test-results/
+playwright-report/
+.local-data/
+*.log

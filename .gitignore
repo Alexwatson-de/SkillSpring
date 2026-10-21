@@ -1,0 +1,14 @@
+node_modules/
+.next/
+.next-demo/
+out/
+.env*
+!.env.example
+.secrets/
+.vercel/
+playwright-report/
+test-results/
+*.log
+*.tsbuildinfo
+firebase-export-*/
+.local-data/
