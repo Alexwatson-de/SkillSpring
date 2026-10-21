@@ -6,7 +6,15 @@ const config: NextConfig = {
       : ".next",
   devIndicators: false,
   poweredByHeader: false,
-  serverExternalPackages: ["firebase-admin", "sharp"],
+  outputFileTracingRoot: process.cwd(),
+  // Vercel's CJS instrumentation cannot require jose's ESM entry point.
+  // Bundle the Auth verification chain; keep native/gRPC libraries external.
+  transpilePackages: ["firebase-admin", "jwks-rsa", "jose"],
+  serverExternalPackages: [
+    "@google-cloud/firestore",
+    "@google-cloud/storage",
+    "sharp",
+  ],
   async headers() {
     return [
       {
@@ -22,7 +30,19 @@ const config: NextConfig = {
           {
             key: "Content-Security-Policy",
             value:
-              "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://apis.google.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://res.cloudinary.com; connect-src 'self' https://*.googleapis.com https://*.firebaseapp.com http://127.0.0.1:9101; frame-src https://*.firebaseapp.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'",
+              "default-src 'self'; script-src 'self' 'unsafe-inline' https://apis.google.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://res.cloudinary.com; connect-src 'self' https://*.googleapis.com https://*.firebaseapp.com; frame-src https://*.firebaseapp.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'"
+                .replace(
+                  "script-src 'self'",
+                  process.env.NODE_ENV === "development"
+                    ? "script-src 'self' 'unsafe-eval'"
+                    : "script-src 'self'",
+                )
+                .replace(
+                  "connect-src 'self'",
+                  process.env.NEXT_PUBLIC_FIREBASE_AUTH_EMULATOR_URL
+                    ? "connect-src 'self' http://127.0.0.1:9101 ws://localhost:*"
+                    : "connect-src 'self'",
+                ),
           },
         ],
       },

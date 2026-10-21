@@ -74,12 +74,13 @@ Executed successfully on 2026-10-21:
 - Prepared protected environment example, additive Firestore indexes, CI workflow, hosting exclusions, setup/security/operations documentation and local demo seed.
 - Real catalog initialized with 22 approved skills. Initial owner `dhruv.bansal@softage.ai` created without a known password; Firebase accepted the setup-email request. Inbox delivery and owner verification remain user actions.
 - Vercel authentication refreshed successfully. Team `dhruv-820e` is Hobby.
-- **Public deployment gate:** confirm this project is personal/non-commercial before using that plan. No plan upgrade, purchase or Firebase billing change authorized or performed.
-- No production URL claimed. Source push and final artifacts recorded in the handoff.
+- **Deployment authorized:** the user explicitly selected personal/non-commercial Hobby deployment. No plan upgrade, purchase or Firebase billing change performed.
+- **Verified production:** https://skillspring-fawn.vercel.app. Protected environment values configured on the new SkillSpring project, GitHub repository connected, and only the final domain appended to Firebase Auth's existing domain allowlist.
+- First hosted smoke exposed Firebase Auth's CommonJS/ESM dependency loading under Vercel instrumentation. Bundled firebase-admin/jwks-rsa/jose, retained gRPC/native dependencies externally, redeployed and reran verification successfully. No crypto downgrade or rule weakening.
+- **25 hosted integration assertions and 10 hosted browser checks passed.** Real registration, persisted onboarding after refresh, private workflow, image bytes/upload/delivery, authorization, mobile layouts and logout/login verified. Temporary test data and image assets removed; real user-created data preserved.
 
 ## Remaining launch work / explicit limitations
 
-- Hosting eligibility confirmation, actual deployment, final-domain Firebase authorization and hosted smoke.
 - Operator support email, reviewed legal/retention/age policy, owner password setup and verification.
 - No push/background reminders, payment, calendar sync or native video hosting; core journey works without them.
 - Pagination limits for search/dashboard/session history are documented in README; do not describe the baseline as a global search engine.

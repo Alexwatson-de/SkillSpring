@@ -20,11 +20,13 @@ The authorized Firebase CLI account `dhruv.bansal@softage.ai` was provisioned as
 
 The existing authorized account's server credentials are reused, without copying secrets into Git. No new image service or paid plan was introduced. Uploads are authenticated server-to-server binary uploads, not unrestricted public direct uploads. Normal use requires no custom unsigned preset. The 4 MB input cap fits under Vercel's 4.5 MB request limit; encoded output is a bounded 512 px JPEG. Real image upload and delivery were tested and the synthetic asset deleted.
 
-## Hosting gate
+## Verified hosting
 
-A valid Vercel login is available after CLI token refresh. The existing team `dhruv-820e` is on **Hobby**. Before using that hosting plan, the operator must confirm SkillSpring is personal/non-commercial and eligible for the plan. Do not infer eligibility from prior authorization for another project, and do not upgrade or enable billing automatically.
+A valid Vercel login was refreshed. The existing team `dhruv-820e` is on **Hobby**, and the user explicitly confirmed that SkillSpring is personal/non-commercial and approved deployment on that plan. No upgrade or billing change was made. Reassess eligibility if the project becomes commercial.
 
-No production URL is claimed until an actual deployed application passes hosted checks. GitHub source can be delivered independently of this gate.
+Production: https://skillspring-fawn.vercel.app. The new SkillSpring project is connected to the supplied GitHub repository. All 25 live integration assertions and 10 real hosted-browser checks passed; synthetic fixtures were removed and real user data preserved.
+
+The first Vercel deployment exposed an Auth dependency CJS/ESM error not present in the local Node runtime. `next.config.ts` now bundles firebase-admin, jwks-rsa and jose; Firestore/Storage/native sharp packages remain external. Production CSP disables unsafe-eval and local emulator network endpoints. Do not undo this bundling fix based only on a local build result.
 
 ## Deploy when authorized
 
@@ -73,9 +75,9 @@ Before general launch, publish the support channel, document appeal handling and
 
 ## Release checklist
 
-- [ ] Confirm eligible hosting use; deploy and verify final URL.
+- [x] Confirm eligible hosting use; deploy and verify final URL.
 - [ ] Operator completes password setup and email verification.
 - [ ] Publish support contact and review policies/retention.
-- [ ] Confirm all required indexes are READY.
-- [ ] Run final full test suite, build, audit and hosted smoke.
+- [x] Verify required query indexes by successful live workflow queries.
+- [x] Run full test suite, build, audit and hosted smoke.
 - [ ] Preserve a verified secret-free Git commit and record deployment revision.

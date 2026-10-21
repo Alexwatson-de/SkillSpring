@@ -12,3 +12,4 @@ test-results/
 *.tsbuildinfo
 firebase-export-*/
 .local-data/
+.vercel

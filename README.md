@@ -12,7 +12,8 @@ A TypeScript skill-exchange application with a complete persisted journey: regis
 - **Executed:** 92 unit/API/rule/transport tests, 12 end-to-end browser journeys, four automated WCAG A/AA page scans, an optimized production build, TypeScript, ESLint, and a clean production dependency audit. A separate real-service smoke run passed 25 assertions and removed its synthetic accounts, profiles, exchange, reviews and uploaded image afterward.
 - The initial SkillSpring owner is `dhruv.bansal@softage.ai`. A new identity was created without a default password; Firebase accepted the password-setup email request. Inbox delivery has not been observed. Set a password, sign in, verify the email when prompted, and complete onboarding. The role is stored only in SkillSpring's private account record.
 - No billing was enabled and no hosting plan was upgraded.
-- **Hosting is not yet deployed.** The existing Vercel session was successfully refreshed; its workspace uses Hobby. Confirm that this application is personal/non-commercial before deploying there. Do not treat localhost or emulator URLs as production deployment.
+- **Verified production:** https://skillspring-fawn.vercel.app, linked to https://github.com/Alexwatson-de/SkillSpring. The owner explicitly confirmed personal/non-commercial Hobby use. All 25 integration assertions passed on the deployed host, followed by 10 actual hosted-browser checks (registration, saved onboarding, photo upload, privacy, admin denial, mobile layouts, logout/login and runtime exceptions). Synthetic hosted fixtures were removed; user-created profiles and data were preserved.
+- Vercel-only Firebase CJS/ESM dependency loading was fixed by bundling the Auth verification chain, without downgrading cryptography. Production CSP excludes unsafe-eval and emulator endpoints.
 
 See [implementation log](IMPLEMENTATION.md), [architecture and security](docs/ARCHITECTURE.md), and [operations](docs/OPERATIONS.md).
 
