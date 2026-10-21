@@ -2,7 +2,7 @@
 import Link from "next/link";
 import {
   ArrowRight,
-  ArrowUpRight,
+  ChevronRight,
   Code2,
   PenTool,
   Camera,
@@ -13,7 +13,6 @@ import {
   Repeat2,
   Check,
   Sprout,
-  MoveUpRight,
 } from "lucide-react";
 import { Brand, Reveal, Tag, Avatar } from "./ui";
 import { useData, useSession } from "./provider";
@@ -73,7 +72,7 @@ export function Landing() {
         <div className="header-actions">
           {user ? (
             <Link href="/dashboard" className="button small">
-              My dashboard <ArrowUpRight size={16} />
+              My dashboard <ChevronRight size={16} />
             </Link>
           ) : (
             <>
@@ -81,7 +80,7 @@ export function Landing() {
                 Log in
               </Link>
               <Link href="/signup" className="button small">
-                Join the community <ArrowUpRight size={16} />
+                Join the community <ChevronRight size={16} />
               </Link>
             </>
           )}
@@ -108,7 +107,7 @@ export function Landing() {
             </p>
             <div className="row hero-actions">
               <Link href="/signup" className="button">
-                Start Exchanging Skills <ArrowUpRight size={19} />
+                Start Exchanging Skills <ChevronRight size={19} />
               </Link>
               <Link href="/discover" className="button secondary">
                 Explore Skills <ArrowRight size={18} />
@@ -192,7 +191,7 @@ export function Landing() {
               Practical learning <Sparkles size={17} />
             </b>
             <b>
-              New possibilities <MoveUpRight size={17} />
+              New possibilities <ChevronRight size={17} />
             </b>
           </div>
         </div>
@@ -249,7 +248,7 @@ export function Landing() {
                 <h2>What will you learn next?</h2>
               </div>
               <Link href="/discover" className="text-link">
-                Explore all skills <ArrowUpRight size={18} />
+                Explore all skills <ChevronRight size={18} />
               </Link>
             </Reveal>
             <div className="category-grid">
@@ -264,7 +263,7 @@ export function Landing() {
                     </span>
                     <h3>{c.name}</h3>
                     <p>{c.description}</p>
-                    <ArrowUpRight className="category-arrow" size={21} />
+                    <ChevronRight className="category-arrow" size={21} />
                   </Link>
                 </Reveal>
               ))}
@@ -278,7 +277,7 @@ export function Landing() {
               <h2>Your people are out there.</h2>
             </div>
             <Link href="/discover" className="text-link">
-              Meet the community <ArrowUpRight size={18} />
+              Meet the community <ChevronRight size={18} />
             </Link>
           </Reveal>
           {people?.items.length ? (
@@ -306,7 +305,7 @@ export function Landing() {
                         "One-way mentoring"}
                     </p>
                     <span className="text-link">
-                      Meet {p.name.split(" ")[0]} <ArrowUpRight size={16} />
+                      Meet {p.name.split(" ")[0]} <ChevronRight size={16} />
                     </span>
                     {p.demo && <Tag>Demo profile</Tag>}
                   </Link>
@@ -325,7 +324,7 @@ export function Landing() {
                   collaborator might be looking for exactly what you know.
                 </p>
                 <Link href="/signup" className="text-link">
-                  Make the first connection <ArrowUpRight size={18} />
+                  Make the first connection <ChevronRight size={18} />
                 </Link>
               </div>
             </div>
@@ -358,7 +357,7 @@ export function Landing() {
               </li>
             </ul>
             <Link href="/discover" className="button">
-              Find your next connection <ArrowUpRight size={18} />
+              Find your next connection <ChevronRight size={18} />
             </Link>
           </Reveal>
           <Reveal className="quote-card">
@@ -394,7 +393,7 @@ export function Landing() {
                 <h3>Recently shared skills</h3>
                 <p>Find the community’s latest offers.</p>
               </div>
-              <ArrowUpRight />
+              <ChevronRight />
             </Link>
             <Link href={user ? "/matches" : "/signup"}>
               <Repeat2 />
@@ -402,7 +401,7 @@ export function Landing() {
                 <h3>Made-for-you exchanges</h3>
                 <p>Understand the connection, not a mystery percentage.</p>
               </div>
-              <ArrowUpRight />
+              <ChevronRight />
             </Link>
           </div>
         </section>
@@ -438,7 +437,7 @@ export function Landing() {
             You don’t need to know everything. Just start with what you know.
           </p>
           <Link href="/signup" className="button lime">
-            Start Exchanging Skills <ArrowUpRight size={20} />
+            Start Exchanging Skills <ChevronRight size={20} />
           </Link>
         </section>
       </main>

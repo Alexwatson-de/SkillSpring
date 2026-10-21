@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import {
-  ArrowUpRight,
+  ChevronRight,
   ArrowRight,
   Plus,
   Repeat2,
@@ -67,7 +67,7 @@ export function Dashboard() {
         text="What will you share, learn, or discover today?"
         action={
           <Link href="/discover" className="button">
-            Discover people <ArrowUpRight size={17} />
+            Discover people <ChevronRight size={17} />
           </Link>
         }
       />
@@ -107,7 +107,7 @@ export function Dashboard() {
                 <s.icon size={20} />
                 <strong>{s.value}</strong>
                 <span>{s.name}</span>
-                <ArrowUpRight size={16} />
+                <ChevronRight size={16} />
               </Link>
             ))}
           </div>
@@ -138,7 +138,7 @@ export function Dashboard() {
                     )}
                   </div>
                   <Link href="/matches?direction=teach" className="text-link">
-                    Find someone to teach <ArrowUpRight size={15} />
+                    Find someone to teach <ChevronRight size={15} />
                   </Link>
                 </div>
                 <div className="panel learn-panel">
@@ -161,14 +161,14 @@ export function Dashboard() {
                     )}
                   </div>
                   <Link href="/matches?direction=learn" className="text-link">
-                    Find someone to learn from <ArrowUpRight size={15} />
+                    Find someone to learn from <ChevronRight size={15} />
                   </Link>
                 </div>
               </div>
               <div className="row between section-mini-heading">
                 <h2>Connections in the making.</h2>
                 <Link href="/exchanges" className="text-link">
-                  All exchanges <ArrowUpRight size={16} />
+                  All exchanges <ChevronRight size={16} />
                 </Link>
               </div>
               {pending.length ? (
@@ -191,7 +191,7 @@ export function Dashboard() {
               <div className="row between section-mini-heading">
                 <h2>A good place to start.</h2>
                 <Link href="/matches" className="text-link">
-                  All matches <ArrowUpRight size={16} />
+                  All matches <ChevronRight size={16} />
                 </Link>
               </div>
               {matches?.items.length ? (
@@ -211,7 +211,7 @@ export function Dashboard() {
                     community grows.
                   </p>
                   <Link href="/profile/edit" className="text-link">
-                    Update your skills <ArrowUpRight size={15} />
+                    Update your skills <ChevronRight size={15} />
                   </Link>
                 </div>
               )}
@@ -228,7 +228,7 @@ export function Dashboard() {
                 </div>
                 <p>A clearer picture helps the right people find you.</p>
                 <Link href="/profile/edit" className="text-link">
-                  Polish your profile <ArrowUpRight size={16} />
+                  Polish your profile <ChevronRight size={16} />
                 </Link>
               </div>
               <div className="panel">
@@ -257,7 +257,7 @@ export function Dashboard() {
                   </p>
                 )}
                 <Link href="/sessions" className="text-link">
-                  Your schedule <ArrowUpRight size={15} />
+                  Your schedule <ChevronRight size={15} />
                 </Link>
               </div>
               <div className="panel">
@@ -282,7 +282,7 @@ export function Dashboard() {
                   </p>
                 )}
                 <Link href="/notifications" className="text-link">
-                  All updates <ArrowUpRight size={15} />
+                  All updates <ChevronRight size={15} />
                 </Link>
               </div>
             </aside>
@@ -441,7 +441,7 @@ export function Saved() {
                   href={`/people/${i.profile.username}`}
                 >
                   View {i.profile.name}
-                  <ArrowUpRight size={16} />
+                  <ChevronRight size={16} />
                 </Link>
               )}
               <button
@@ -491,7 +491,7 @@ export function Sessions() {
         text={`Upcoming confirmed sessions · ${me?.profile?.timezone || "Your local time"}. Open an exchange to propose or reschedule.`}
         action={
           <Link href="/exchanges" className="button">
-            Manage exchanges <ArrowUpRight size={17} />
+            Manage exchanges <ChevronRight size={17} />
           </Link>
         }
       />
@@ -513,7 +513,7 @@ export function Sessions() {
                 {s.duration} minutes · {s.format}
               </Tag>
               <p className="text-link">
-                Open exchange <ArrowUpRight size={16} />
+                Open exchange <ChevronRight size={16} />
               </p>
             </Link>
           ))}

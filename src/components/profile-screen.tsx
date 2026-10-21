@@ -9,7 +9,7 @@ import {
   Ban,
   Globe,
   MapPin,
-  ArrowUpRight,
+  ChevronRight,
   Star,
 } from "lucide-react";
 import type { Profile, Review } from "@/lib/model";
@@ -146,7 +146,7 @@ export function ProfileScreen({ username }: { username: string }) {
               </Link>
             ) : (
               <button className="button" onClick={() => connect("Learn")}>
-                Let’s connect <ArrowUpRight size={17} />
+                Let’s connect <ChevronRight size={17} />
               </button>
             )}
             <div className="row">
@@ -290,7 +290,7 @@ export function ProfileScreen({ username }: { username: string }) {
                       rel="noopener noreferrer"
                       className="text-link"
                     >
-                      Supporting work <ArrowUpRight size={15} />
+                      Supporting work <ChevronRight size={15} />
                     </a>
                   )}
                   <div className="row">
@@ -306,7 +306,7 @@ export function ProfileScreen({ username }: { username: string }) {
                       {tab === "Skills offered"
                         ? "Request to learn"
                         : "Offer to teach"}
-                      <ArrowUpRight size={14} />
+                      <ChevronRight size={14} />
                     </button>
                     {tab === "Skills offered" && (
                       <button
@@ -341,7 +341,7 @@ export function ProfileScreen({ username }: { username: string }) {
                     rel="noopener noreferrer"
                   >
                     {new URL(l).hostname}
-                    <ArrowUpRight size={18} />
+                    <ChevronRight size={18} />
                   </a>
                 ))
               ) : (

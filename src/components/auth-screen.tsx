@@ -9,7 +9,7 @@ import {
   sendPasswordResetEmail,
   updateProfile,
 } from "firebase/auth";
-import { ArrowUpRight, Sprout, Check } from "lucide-react";
+import { ChevronRight, Sprout, Check } from "lucide-react";
 import { auth } from "@/lib/firebase";
 import { blankProfile } from "@/lib/model";
 import { api, useSession } from "./provider";
@@ -191,7 +191,7 @@ export function AuthScreen({ mode }: { mode: "login" | "signup" | "reset" }) {
                   : reset
                     ? "Send reset instructions"
                     : "Log in"}
-              <ArrowUpRight size={18} />
+              <ChevronRight size={18} />
             </button>
           </form>
           {!reset && (

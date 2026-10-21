@@ -1,7 +1,8 @@
 "use client";
 import Link from "next/link";
 import { useEffect, useRef, type ReactNode } from "react";
-import { ArrowUpRight, X, Sprout, Search, AlertCircle } from "lucide-react";
+// User-requested visual refinement: action indicators use chevrons, not diagonal arrows.
+import { ChevronRight, X, Sprout, Search, AlertCircle } from "lucide-react";
 import { motion } from "motion/react";
 import type { Profile } from "@/lib/model";
 export function Brand({ name = "SkillSpring" }: { name?: string }) {
@@ -84,7 +85,7 @@ export function Empty({
       {href && (
         <Link className="button" href={href}>
           {label}
-          <ArrowUpRight size={16} />
+          <ChevronRight size={16} />
         </Link>
       )}
     </div>

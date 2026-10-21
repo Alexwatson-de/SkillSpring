@@ -7,6 +7,7 @@ A TypeScript skill-exchange application with a complete persisted journey: regis
 ## Current delivery status
 
 - Original cream/forest/sage design system, responsive layouts, restrained CSS perspective, Motion interactions, reduced-motion support, native keyboard-accessible dialogs, and visible focus states.
+- Icon refinement: the user's screenshot-referenced diagonal action arrows are replaced throughout the public and authenticated UI with rounded chevron-right icons. Existing sizing, colors, routes and click behavior are preserved.
 - Next.js 16 / React 19 / TypeScript. One trusted Node API, Firebase Authentication and Firestore. No parallel mock backend.
 - **Real configured services verified:** Firebase project `forum-d1133`, a dedicated server identity, and the already-authorized Cloudinary account.
 - **Executed:** 92 unit/API/rule/transport tests, 12 end-to-end browser journeys, four automated WCAG A/AA page scans, an optimized production build, TypeScript, ESLint, and a clean production dependency audit. A separate real-service smoke run passed 25 assertions and removed its synthetic accounts, profiles, exchange, reviews and uploaded image afterward.

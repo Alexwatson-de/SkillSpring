@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useSearchParams, useRouter } from "next/navigation";
 import { useEffect, useState, type FormEvent } from "react";
 import {
-  ArrowUpRight,
+  ChevronRight,
   ArrowRight,
   Bookmark,
   Repeat2,
@@ -185,7 +185,7 @@ export function RequestModal({
         <div className="row">
           <button className="button" disabled={busy} value="send">
             {busy ? "Saving…" : "Send request"}
-            <ArrowUpRight size={16} />
+            <ChevronRight size={16} />
           </button>
           <button className="button secondary" value="draft" disabled={busy}>
             Save draft
@@ -281,7 +281,7 @@ export function PersonCard({
       </div>
       <div className="card-footer">
         <Link href={`/people/${person.username}`} className="text-link">
-          View profile <ArrowUpRight size={16} />
+          View profile <ChevronRight size={16} />
         </Link>
         <button
           className="button small secondary"
@@ -433,7 +433,7 @@ export function Discovery({ matches = false }: { matches?: boolean }) {
           {["React", "UI/UX design", "Spanish", "Photography"].map((s) => (
             <button key={s} onClick={() => setSearch(s)}>
               {s}
-              <ArrowUpRight size={12} />
+              <ChevronRight size={12} />
             </button>
           ))}
         </div>

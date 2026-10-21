@@ -16,7 +16,7 @@ import {
   LogOut,
   Menu,
   X,
-  ArrowUpRight,
+  ChevronRight,
 } from "lucide-react";
 import { auth } from "@/lib/firebase";
 import { api, useData, useSession } from "./provider";
@@ -160,7 +160,7 @@ export function AppShell({
           </h3>
           <p>A little of your time could be someone’s next big step.</p>
           <Link href={user ? "/profile/edit" : "/signup"}>
-            Share a skill <ArrowUpRight size={16} />
+            Share a skill <ChevronRight size={16} />
           </Link>
         </div>
         <div className="sidebar-bottom">

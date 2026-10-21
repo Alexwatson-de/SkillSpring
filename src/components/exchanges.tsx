@@ -4,7 +4,7 @@ import { useEffect, useState, type FormEvent } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { DateTime } from "luxon";
 import {
-  ArrowUpRight,
+  ChevronRight,
   Send,
   CalendarPlus,
   Flag,
@@ -58,7 +58,7 @@ export function ExchangeList({ messages = false }: { messages?: boolean }) {
         }
         action={
           <Link href="/discover" className="button">
-            Find a connection <ArrowUpRight size={17} />
+            Find a connection <ChevronRight size={17} />
           </Link>
         }
       />
@@ -141,7 +141,7 @@ export function ExchangeRow({
       <Tag tone={e.status === "completed" ? "green" : ""}>
         {e.status.replace("_", " ")}
       </Tag>
-      <ArrowUpRight size={19} />
+      <ChevronRight size={19} />
     </Link>
   );
 }
@@ -487,7 +487,7 @@ export function ExchangeWorkspace({ id }: { id: string }) {
               act({ action: "transition", status: "pending" }, "Request sent")
             }
           >
-            Send draft <ArrowUpRight size={16} />
+            Send draft <ChevronRight size={16} />
           </button>
           <button
             className="text-button"
@@ -695,7 +695,7 @@ export function ExchangeWorkspace({ id }: { id: string }) {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Open meeting link <ArrowUpRight size={15} />
+                    Open meeting link <ChevronRight size={15} />
                   </a>
                 )}
                 <p className="prose">{s.notes}</p>
@@ -834,7 +834,7 @@ export function ExchangeWorkspace({ id }: { id: string }) {
             {e.resources?.map((r) => (
               <a href={r} rel="noopener noreferrer" target="_blank" key={r}>
                 {r}
-                <ArrowUpRight size={14} />
+                <ChevronRight size={14} />
               </a>
             ))}
           </div>

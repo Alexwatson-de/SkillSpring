@@ -1,6 +1,6 @@
 "use client";
 import { useState, type FormEvent } from "react";
-import { ShieldCheck, ArrowUpRight, Search } from "lucide-react";
+import { ShieldCheck, ChevronRight, Search } from "lucide-react";
 import { api, useData, useSession } from "./provider";
 import { defaultSettings, type Settings } from "@/lib/model";
 import {
@@ -264,7 +264,7 @@ export function AdminScreen() {
                                 setEvidence(null);
                               }}
                             >
-                              Manage <ArrowUpRight size={14} />
+                              Manage <ChevronRight size={14} />
                             </button>
                           )}
                         </td>
